@@ -1,5 +1,5 @@
 connection:  
   - name: machine-A-with-pem
-    command: ssh -i ~/ps-sso-kerberos.pem ec2-user@192.168.1.100
+    command: ssh -i ~/my-local.pem ec2-user@192.168.1.100
   - name: machine-B-with-password
     command: sshpass -p mySecretPassword ssh ec2-user@192.168.1.10

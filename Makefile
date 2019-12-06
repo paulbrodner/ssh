@@ -8,7 +8,7 @@ CONNECTIONS?=connections.yml
 conn: ## list available connections
 	@echo These are the available connections. 
 	@yq r $(CONNECTIONS) 'connection[*].name' | xargs -I % sh -c "echo  %" | nl -ba -nln -v 0
-	@echo Please choose the number assigned to desired connection above? && read number && \
+	@echo Please choose the number assigned to desired connection above: && read number && \
 	echo "You choosed [`yq r $(CONNECTIONS) "connection[$$number].name"`] Connecting..." && \
 	`yq r $(CONNECTIONS) "connection[$$number].command"`
 
